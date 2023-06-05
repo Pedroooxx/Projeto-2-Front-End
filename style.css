@@ -123,7 +123,7 @@ body {
     min-width: 150px;
     margin: 4px 4px;
     border-radius: 7px;
-    border: 2px solid #41a846;
+    border: 2px solid #bebebe;
     box-shadow: 1px 1px 3px 1px rgb(78, 78, 78, 0.2);
 }
 
@@ -209,11 +209,18 @@ li.organico {
     left:0px;
     right:0px;
     height: 50px;
-    margin:20px 0px 0px 0px;
+    margin:20px 100px;
     background-color:#469b31;
     display: flex;
-	justify-content: center;
+    flex-wrap: wrap;
+	justify-content:space-evenly;
+    align-content: center;
 	align-items: center;
+}
+
+.logoFoot {
+    height:30px;
+    margin: 0px 20px;
 }
 
 .footertxt {
@@ -222,4 +229,6 @@ li.organico {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 80%;
     font-weight:300;
+    margin: 0px 20px;
+    white-space:nowrap;
 }
