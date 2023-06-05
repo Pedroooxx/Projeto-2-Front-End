@@ -101,14 +101,30 @@ body {
     text-align: center;
 }
 
-#reciclehelp {
+#recicleHelp {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    margin: 10px 0px;
     height:80px;
     width:100%;
+}
+
+.recicleItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100%;
+    width:18%;
+    margin: 0px 4px;
+    border-radius: 10px;
+}
+
+.recicleItemtxt {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(224, 224, 224);
 }
 
 #tipform {
