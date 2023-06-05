@@ -101,6 +101,16 @@ body {
     text-align: center;
 }
 
+#reciclehelp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height:80px;
+    width:100%;
+}
+
 #tipform {
 	align-self: center;
 }
