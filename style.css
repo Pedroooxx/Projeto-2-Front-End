@@ -70,7 +70,7 @@ body {
 .contenttxt {
     font-size: 80%;
     margin: 70px 45% 70px 70px;
-    color:rgb(214, 214, 214);
+    color:white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #4e5a62;
     border-radius: 20px;
@@ -79,7 +79,7 @@ body {
 
 .contenttxt:hover{
     box-shadow: 5px 5px 5px 5px #4d4d4d1f;
-    color:white;
+    background-color: #57646d;
 }
 
 @media only screen and (max-width: 1000px) {
