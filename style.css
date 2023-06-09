@@ -61,7 +61,7 @@ body {
     padding: 20px 0px;
     height:min-content;
     width:100%;
-    background-image: url(fundo\ reciclagem.png);
+    background-image: url(fundo\ reciclagem.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -72,7 +72,7 @@ body {
     margin: 70px 45% 70px 70px;
     color:white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #4e5a62;
+    background-color: #283741c7;
     border-radius: 20px;
     padding:40px;
 }
