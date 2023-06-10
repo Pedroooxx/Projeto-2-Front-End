@@ -25,7 +25,7 @@ function getTipsList(){
 }  
 
 function renderTipsList(){
-    tipsListElement = documente.getElementById('tipsList');
+    tipsListElement = document.getElementById('tipsList');
     tipsListElement.innerHTML = '';
 
   tipsList.forEach(function (tip) {
@@ -35,24 +35,6 @@ function renderTipsList(){
   });
 }
 
-/*// Função para inicializar a lista de dicas cadastradas
-function initializeTipsList() {
-  var tips = localStorage.getItem("tips");
-  if (tips) {
-    tips = JSON.parse(tips);
-    tips.forEach(function (tip) {
-      var listItem = document.createElement("li");
-      listItem.innerHTML = tip.dica;
-      listItem.classList.add(tip.material);
-      tipsList.appendChild(listItem);
-    });
-  }
-}
-
-// Obtem referência à lista de dicas
-var tipsList = document.getElementById("tipsList");
-
-initializeTipsList();*/
 
 // Exclui dica
 function deleteTip(tipId) {
@@ -70,3 +52,41 @@ function deleteTip(tipId) {
 
     getTipsList();
     renderTipsList();
+
+    function showHorarios() {
+      var collectionTimesList = document.getElementById("collectionTimesList");
+      collectionTimesList.innerHTML = "";
+
+      // Exemplo de horários de coleta por bairro
+      var collectionTimes = [
+        { bairro: "Bairro A", horarios: ["Segunda-feira (07:00)", "Quinta-feira (07:00)"] },
+        { bairro: "Bairro B", horarios: ["Terça-feira (07:00)", "Sexta-feira (07:00)"] },
+        { bairro: "Bairro C", horarios: ["Terça-feira (08:00)", "Quarta-feira (08:00)"] },
+        { bairro: "Bairro D", horarios: ["Quarta-feira (07:00)", "Sábado (07:00)"] },
+        { bairro: "Bairro E", horarios: ["Segunda-feira (08:00)", "Quinta-feira (08:00)"] }
+      ]; 
+
+      //alteração para o botao poder esconder a lista tambem
+      if (collectionTimesList.style.display === "none") {
+        collectionTimesList.innerHTML = "";
+
+        // Para cada bairro, adiciona um item à lista
+        collectionTimes.forEach(function(time) {
+          var listItem = document.createElement("li");
+          listItem.innerHTML = time.bairro + ": " + time.horarios.join(", ");
+          collectionTimesList.appendChild(listItem);
+        });
+
+        collectionTimesList.style.display = "block";
+        //altera o texto do botao
+        var verHorariosBtn = document.getElementById("verHorariosBtn");
+        verHorariosBtn.innerText = "Fechar";
+      } else {
+        collectionTimesList.style.display = "none";
+        //altera o texto do botao
+        var verHorariosBtn = document.getElementById("verHorariosBtn");
+        verHorariosBtn.innerText = "Ver Horários";
+      }
+    }  
+
+ 
