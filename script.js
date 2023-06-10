@@ -73,6 +73,7 @@ function renderTipsList(){
         arrayValues.splice(index, 1);
         localStorage.setItem("storedTips", JSON.stringify(arrayValues));
         renderTipsList();
+        renderFilteredTips();
       } else{
         alert('Dica não encontrada');
       }
@@ -99,7 +100,7 @@ function renderTipsList(){
       if (collectionTimesList.style.display === "none") {
         collectionTimesList.innerHTML = "";
 
-        // Para cada bairro, adiciona um item à lista
+        //adiciona cada bairro à lista
         collectionTimes.forEach(function(time) {
           var listItem = document.createElement("li");
           listItem.innerHTML = time.bairro + ": " + time.horarios.join(", ");
@@ -118,4 +119,45 @@ function renderTipsList(){
       }
     }  
 
- 
+function filterTips() {
+  var materialFilter = document.getElementById("materialFilter");
+  var selectedMaterial = materialFilter.value;
+  var filteredTips = [];
+
+  var storedTips = localStorage.getItem("storedTips");
+  if (storedTips) {
+      var arrayValues = JSON.parse(storedTips);
+      filteredTips = arrayValues.filter(function(tip) {
+          return tip.material === selectedMaterial;
+      });
+  }
+
+  var filterTipsElement = document.getElementById("filterTips");
+
+  //remove os itens da lista anterior toda vez que um novo material é selecionado
+  while (filterTipsElement.firstChild) {
+      filterTipsElement.removeChild(filterTipsElement.firstChild);
+  }
+
+  renderFilteredTips(filteredTips);
+
+  //resolve o problema da lista aparecer mesmo sem um material ser selecionando
+  //no html o style esta "display: none"
+  filterTipsElement.style.display = "block";
+
+}
+
+// mostra as dicas de acordo com o material selecionado
+function renderFilteredTips(tips) {
+  var filterTipsElement = document.getElementById("filterTips");
+  filterTipsElement.innerHTML = "";
+
+  tips.forEach(function(tip) {
+      var listItem = document.createElement("li");
+      //listItem.innerHTML = "Material: " + tip.material + " / Dica: " + tip.dica;
+      listItem.innerHTML = "Material: " + tip.material + " / Dica: "+tip.dica+ '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">Excluir</button>';
+      filterTipsElement.appendChild(listItem);
+  });
+}
+
+renderFilteredTips(JSON.parse(localStorage.getItem("storedTips")));

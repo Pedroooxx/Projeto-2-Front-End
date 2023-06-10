@@ -106,7 +106,7 @@
     </div>
 
     <form id="tipForm">
-        
+
         <label class="formtxt" for="materialSelect">Material:</label>
 
         <select class="formselect" id="materialSelect" required>
@@ -129,6 +129,7 @@
 
     <div id="filterBox">
 
+        <label class="formtxt" for="materialFilter">Filtrar:</label>
         <select id="materialFilter" required>
 
         <option class="formtxt" value="">Filtrar por material</option>
@@ -139,8 +140,9 @@
         <option class="formtxt" value="organico">Orgânico</option>
 
         </select>
-    <button id="filterBtn" onclick="">Filtrar</button>
-    <ul id="tipsList"></ul>
+
+        <button id="filterBtn" onclick="filterTips()">Filtrar</button>
+        <ul id="filterTips" style="display: none;"></ul>
     </div>
 
     <div class="horarios">

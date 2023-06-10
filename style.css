@@ -221,7 +221,13 @@ li.organico {
 }
 
 #filterBox{
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+	align-items: center;
+	background-color:white;
+    width:100%;
+    padding: 20px 0px;
     text-align: center;
 	align-items: center;
 }
@@ -277,8 +283,4 @@ li.organico {
     white-space:nowrap;
 }
 
-/*.plastico { color: red; }
-.metal { color: yellow; }
-.papel { color: blue; }
-.vidro { color: green; }
-.organico { color: brown; }*/
+
