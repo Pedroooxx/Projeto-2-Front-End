@@ -1,20 +1,37 @@
-// Criar uma lista vazia de pacientes
-var tipsList = [];
-var count = 1;
+  //adiciona dica
+  function addTip(){
+    var material = document.getElementById("materialSelect");
+    var dica = document.getElementById("dicaInput");
 
-  function addTip(material, dica){
-    var newTip = {id:count++, material: material, dica:dica};
-    /*var materialSelect = document.getElementById("materialSelect");
-    var material = materialSelect.value;
-  
-    // Verificar se um material foi selecionado
-    if (material === "") {
-      alert("Selecione o material.");
-      return;
+    var storedTips = localStorage.getItem("storedTips");
+    var arrayValues = storedTips ? JSON.parse(storedTips) : [];
+    /*código verifica o comprimento da matriz valuesArray usando operador ternário. 
+    Se ela não estiver vazia, o ID do novo objeto será o ID do último objeto mais 1. 
+    Caso contrário, o ID será definido como 1. */
+    var id = arrayValues.length > 0 ? arrayValues[arrayValues.length - 1].id + 1 : 1;
+
+    var newTip = {id: id, material: material.value, dica: dica.value};
+
+    /*switch(material.value){
+      case "papel":
+        console.log("papel");
+        break;
+      case "metal":
+        console.log("metal");
+        break;
+      case "plastico":
+        console.log("plastico");
+        break;
+      case "vidro":
+        console.log("vidro");
+        break;
+      case "organico":
+        console.log("organico");
+        break;
     }*/
 
-    tipsList.push(newTip);
-    localStorage.setItem('tipsList', JSON.stringify(tipsList));
+    arrayValues.push(newTip);
+    localStorage.setItem("storedTips", JSON.stringify(arrayValues));
 
     renderTipsList();
   }
@@ -22,31 +39,43 @@ var count = 1;
 function getTipsList(){
     var storedList = JSON.parse(localStorage.getItem('tipsList'));
     tipsList = storedList || [];
-}  
+}
 
+//função obtem a lista, obtem os valores do localStorage, converte para uma matriz e cria li
 function renderTipsList(){
-    tipsListElement = document.getElementById('tipsList');
-    tipsListElement.innerHTML = '';
+  var tipsListElement = document.getElementById('tipsList');
+  tipsListElement.innerHTML = "";
 
-  tipsList.forEach(function (tip) {
-    var listItem = document.createElement('li');
-    listItem.innerHTML = '<span class="tip-dica">' + tip.dica + '</span> (material: '+tip.material+') <button class="delete-button" onclick="deleteTip(' + tip.id + ')">Excluir</button>';
-    tipsListElement.appendChild(listItem);
-  });
+  var storedTips = localStorage.getItem("storedTips");
+  if(storedTips){
+    var arrayValues = JSON.parse(storedTips);
+    arrayValues.forEach(function (tip) {
+      var listItem = document.createElement('li');
+      //essa desgraça da linha de baixo deu tanto problema que eu não sei nem o que era e nem como resolvi
+      listItem.innerHTML = "Material: " +tip.material+ "/ Dica: "+tip.dica+ '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">Excluir</button>';
+      tipsListElement.appendChild(listItem);
+    });
+  }
 }
 
 
-// Exclui dica
-function deleteTip(tipId) {
-    var updateTipsList = tipsList.filter(function(tip){
-        return tip.id !== tipId;
-    });
-    if(updateTipsList.length < tipsList.length){
-        tipsList = updateTipsList;
-        localStorage.setItem('tipsList', JSON.stringify(tipsList));
+// Exclui dica por meio do id
+  function deleteTip(tipId) {
+    var storedTips = localStorage.getItem("storedTips");
+
+    if(storedTips){
+      var arrayValues = JSON.parse(storedTips);
+      var index = arrayValues.findIndex(function(tip){
+        return tip.id === tipId;
+      });
+
+      if (index !== -1){
+        arrayValues.splice(index, 1);
+        localStorage.setItem("storedTips", JSON.stringify(arrayValues));
         renderTipsList();
-    } else{
+      } else{
         alert('Dica não encontrada');
+      }
     }
   }
 
@@ -80,7 +109,7 @@ function deleteTip(tipId) {
         collectionTimesList.style.display = "block";
         //altera o texto do botao
         var verHorariosBtn = document.getElementById("verHorariosBtn");
-        verHorariosBtn.innerText = "Fechar";
+        verHorariosBtn.innerText = "Esconder";
       } else {
         collectionTimesList.style.display = "none";
         //altera o texto do botao

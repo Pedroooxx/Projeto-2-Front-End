@@ -106,7 +106,7 @@
     </div>
 
     <form id="tipForm">
-
+        
         <label class="formtxt" for="materialSelect">Material:</label>
 
         <select class="formselect" id="materialSelect" required>
@@ -123,12 +123,28 @@
     <label class="formtxt" for="dicaInput">Dica:</label>
     <input class="formtxtarea" type="text" id="dicaInput" required>
 
-    <button class="formbtn" type="submit">Adicionar Dica</button>
-
+    <button class="formbtn" onclick="addTip()">Adicionar Dica</button>
+    <ul id="tipsList"></ul>
     </form>
 
+    <div id="filterBox">
+
+        <select id="materialFilter" required>
+
+        <option class="formtxt" value="">Filtrar por material</option>
+        <option class="formtxt" value="papel">Papel</option>
+        <option class="formtxt" value="plastico">Plástico</option>
+        <option class="formtxt" value="vidro">Vidro</option>
+        <option class="formtxt" value="metal">Metal</option>
+        <option class="formtxt" value="organico">Orgânico</option>
+
+        </select>
+    <button id="filterBtn" onclick="">Filtrar</button>
+    <ul id="tipsList"></ul>
+    </div>
+
     <div class="horarios">
-        <h2>Horários de Coleta por Bairro</h2>
+        <h3>Horários de Coleta por Bairro</h3>
         <button id="verHorariosBtn" onclick="showHorarios()">Ver Horários</button>
         <ul id="collectionTimesList"></ul>
     </div>
