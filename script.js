@@ -3,6 +3,7 @@
     var material = document.getElementById("materialSelect");
     var dica = document.getElementById("dicaInput");
 
+    if(material.value && dica.value){
     var storedTips = localStorage.getItem("storedTips");
     var arrayValues = storedTips ? JSON.parse(storedTips) : [];
     /*código verifica o comprimento da matriz valuesArray usando operador ternário. 
@@ -34,7 +35,10 @@
     localStorage.setItem("storedTips", JSON.stringify(arrayValues));
 
     renderTipsList();
+  } else{
+    alert("Por favor, preencha todos os campos!");
   }
+}
 
 function getTipsList(){
     var storedList = JSON.parse(localStorage.getItem('tipsList'));
