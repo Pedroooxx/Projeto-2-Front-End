@@ -123,9 +123,33 @@
     <label class="formtxt" for="dicaInput">Dica:</label>
     <input class="formtxtarea" type="text" id="dicaInput" required>
 
-    <button class="formbtn" type="submit">Adicionar Dica</button>
-
+    <button class="formbtn" onclick="addTip()">Adicionar Dica</button>
+    <ul id="tipsList"></ul>
     </form>
+
+    <div id="filterBox">
+
+        <label class="formtxt" for="materialFilter">Filtrar:</label>
+        <select id="materialFilter" required>
+
+        <option class="formtxt" value="">Filtrar por material</option>
+        <option class="formtxt" value="papel">Papel</option>
+        <option class="formtxt" value="plastico">Plástico</option>
+        <option class="formtxt" value="vidro">Vidro</option>
+        <option class="formtxt" value="metal">Metal</option>
+        <option class="formtxt" value="organico">Orgânico</option>
+
+        </select>
+
+        <button id="filterBtn" onclick="filterTips()">Filtrar</button>
+        <ul id="filterTips" style="display: none;"></ul>
+    </div>
+
+    <div class="horarios">
+        <h3>Horários de Coleta por Bairro</h3>
+        <button id="verHorariosBtn" onclick="showHorarios()">Ver Horários</button>
+        <ul id="collectionTimesList"></ul>
+    </div>
 
     <ul id="tipsList"></ul>
 

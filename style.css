@@ -209,7 +209,7 @@ li.organico {
     background-color: #41a846;
     border-color: #024906;
     border-radius: 5px;
-    margin: 0px 20px;
+    margin: 10px 20px;
     width:120px;
     height:40px;
 }
@@ -218,6 +218,38 @@ li.organico {
     background-color: #3ece45;
     border-color: grey;
     color:white;
+}
+
+#filterBox{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+	align-items: center;
+	background-color:white;
+    width:100%;
+    padding: 20px 0px;
+    text-align: center;
+	align-items: center;
+}
+
+#materialFilter{
+    background-color:#e9e9e9;
+    border-color: #024906;
+    border-radius: 5px;
+    height:40px;
+    width:200px;
+    text-align: center;
+	align-items: center;
+}
+
+#filterBtn{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #41a846;
+    border-color: #024906;
+    border-radius: 5px;
+    width:120px;
+    height:40px;
+    margin-left: 20px;
 }
 
 #footer1 {
@@ -250,3 +282,5 @@ li.organico {
     margin: 0px 20px;
     white-space:nowrap;
 }
+
+
