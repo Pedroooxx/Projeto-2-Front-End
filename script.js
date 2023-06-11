@@ -56,12 +56,14 @@ function renderTipsList(){
     arrayValues.forEach(function (tip) {
       var listItem = document.createElement('li');
       //essa desgraça da linha de baixo deu tanto problema que eu não sei nem o que era e nem como resolvi
-      listItem.innerHTML = "Material: " +tip.material+ "/ Dica: "+tip.dica+ '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">Excluir</button>';
+      listItem.innerHTML = "Material: " +tip.material+ "/ Dica: "+tip.dica+ '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button>';
+      
+      
+
       tipsListElement.appendChild(listItem);
     });
   }
 }
-
 
 // Exclui dica por meio do id
   function deleteTip(tipId) {
@@ -93,11 +95,11 @@ function renderTipsList(){
 
       // Exemplo de horários de coleta por bairro
       var collectionTimes = [
-        { bairro: "Bairro A", horarios: ["Segunda-feira (07:00)", "Quinta-feira (07:00)"] },
-        { bairro: "Bairro B", horarios: ["Terça-feira (07:00)", "Sexta-feira (07:00)"] },
-        { bairro: "Bairro C", horarios: ["Terça-feira (08:00)", "Quarta-feira (08:00)"] },
-        { bairro: "Bairro D", horarios: ["Quarta-feira (07:00)", "Sábado (07:00)"] },
-        { bairro: "Bairro E", horarios: ["Segunda-feira (08:00)", "Quinta-feira (08:00)"] }
+        { bairro: "Primavera", horarios: ["Segunda-feira (07:00)", "Quarta-feira (07:00)", "Sexta-feira(07:00"] },
+        { bairro: "Cristo Rei", horarios: ["Terça-feira (07:00)", "Quinta-feira (07:00)", "Sabado(07:00"] },
+        { bairro: "Novo Bandeirantes", horarios: ["Segunda-feira (16:00)", "Quarta-feira (16:00)", "Sexta-feira(16:00"] },
+        { bairro: "Jardom Morumbi", horarios: ["Terça-feira (16:00)", "Quinta-feira (16:00)", "Sabado(16:00"] },
+        { bairro: "Centro", horarios: ["Segunda-feira (18:00) a Sabado (18:00)"] }
       ]; 
 
       //alteração para o botao poder esconder a lista tambem

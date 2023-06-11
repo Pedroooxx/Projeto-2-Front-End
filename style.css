@@ -160,26 +160,6 @@ body {
     padding: 20px 0px;
 }
 
-li.papel {
-    color: blue;
-}
-  
-li.plastico {
-    color: red;
-}
-  
-li.vidro {
-    color: green;
-}
-  
-li.metal {
-    color: yellow;
-}
-  
-li.organico {
-    color: brown;
-}
-
 .formtxt {
     margin: 0px 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -220,6 +200,49 @@ li.organico {
     color:white;
 }
 
+#tipsList {
+    display: flex;
+    color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    align-content: space-between;
+    flex-direction: column;
+    background-color: grey;
+    text-decoration: none;
+    margin: 20px;
+    padding: 20px 30px;
+    height:min-content;
+    width:90%;
+}
+
+li.papel {
+    background-color: rgb(9, 81, 148);
+}
+  
+li.plastico {
+    background-color: rgb(146, 17, 17);
+}
+  
+li.vidro {
+    background-color: rgb(39, 107, 12);
+}
+  
+li.metal {
+    background-color: rgb(126, 119, 19);
+}
+  
+li.organico {
+    background-color: rgb(124, 62, 34);
+}
+
+.delete-button{
+    background-color: #c7c7c7;
+    border-radius: 50px;
+    width:40px;
+    height:40px;
+    margin: 10px;
+}
+
 #filterBox{
     display: flex;
     justify-content: center;
@@ -250,6 +273,48 @@ li.organico {
     width:120px;
     height:40px;
     margin-left: 20px;
+}
+
+.horarios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#41a846;
+    background-image:url("Fundo Papel.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position-y:center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.content3txt {
+    font-size: 48px;
+    padding-top:10px;
+    width:100%;
+}
+
+#verHorariosBtn {
+    background-color: #41a846;
+    border-color: #024906;
+    border-radius: 5px;
+    width:120px;
+    height:40px;
+    margin: 10px;
+}
+
+#collectionTimesList {
+    background-color: #41a846c5;
+    color:white;
+    border-radius: 20px;
+    padding:30px 40px;
+    margin:10px 20px 20px 20px;
+    box-shadow: 2px 2px 4px 2px rgb(78, 78, 78, 0.2);
+    text-decoration: none;
+}
+
+#collectionTimesList:hover{
+    background-color: #41a846e0;
 }
 
 #footer1 {

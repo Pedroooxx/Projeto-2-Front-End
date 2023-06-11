@@ -120,12 +120,14 @@
 
         </select>
 
-    <label class="formtxt" for="dicaInput">Dica:</label>
-    <input class="formtxtarea" type="text" id="dicaInput" required>
+        <label class="formtxt" for="dicaInput">Dica:</label>
+        <input class="formtxtarea" type="text" id="dicaInput" required>
 
-    <button class="formbtn" onclick="addTip()">Adicionar Dica</button>
-    <ul id="tipsList"></ul>
+        <button class="formbtn" onclick="addTip()">Adicionar Dica</button>
+
     </form>
+
+    <ul id="tipsList"></ul>
 
     <div id="filterBox">
 
@@ -146,12 +148,10 @@
     </div>
 
     <div class="horarios">
-        <h3>Horários de Coleta por Bairro</h3>
+        <h3 class="content3txt">Horários de Coleta por Bairro</h3>
         <button id="verHorariosBtn" onclick="showHorarios()">Ver Horários</button>
         <ul id="collectionTimesList"></ul>
     </div>
-
-    <ul id="tipsList"></ul>
 
     <script src="script.js"></script>
 
