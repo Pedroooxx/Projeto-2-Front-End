@@ -56,9 +56,24 @@ function renderTipsList(){
     arrayValues.forEach(function (tip) {
       var listItem = document.createElement('li');
       //essa desgraça da linha de baixo deu tanto problema que eu não sei nem o que era e nem como resolvi
-      listItem.innerHTML = "Material: " +tip.material+ "/ Dica: "+tip.dica+ '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button>';
-      
-      
+
+      switch (tip.material) {
+  case "papel":
+    listItem.innerHTML = "<li class='papel'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "plastico":
+    listItem.innerHTML = "<li class='plastico'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "vidro":
+    listItem.innerHTML = "<li class='vidro'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "metal":
+    listItem.innerHTML = "<li class='metal'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "organico":
+    listItem.innerHTML = "<li class='organico'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+}
 
       tipsListElement.appendChild(listItem);
     });

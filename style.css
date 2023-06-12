@@ -202,20 +202,27 @@ body {
 
 #tipsList {
     display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
     color:white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    align-content: space-between;
-    flex-direction: column;
-    background-color: grey;
+    background-color: white;
     text-decoration: none;
-    margin: 20px;
-    padding: 20px 30px;
     height:min-content;
-    width:90%;
+    width:100%;
 }
 
-li.papel {
+#tipsList li{
+    text-align: center;
+    min-width:45%;
+    margin:5px 10px;
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.papel {
     background-color: rgb(9, 81, 148);
 }
   
@@ -228,11 +235,11 @@ li.vidro {
 }
   
 li.metal {
-    background-color: rgb(126, 119, 19);
+    background-color: rgb(167, 164, 18);
 }
   
 li.organico {
-    background-color: rgb(124, 62, 34);
+    background-color: rgb(100, 58, 9);
 }
 
 .delete-button{
@@ -283,7 +290,7 @@ li.organico {
     background-image:url("Fundo Papel.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    background-position-y:center;
+    background-position-y:top;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
@@ -311,6 +318,7 @@ li.organico {
     margin:10px 20px 20px 20px;
     box-shadow: 2px 2px 4px 2px rgb(78, 78, 78, 0.2);
     text-decoration: none;
+    display: none;
 }
 
 #collectionTimesList:hover{
