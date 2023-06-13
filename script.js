@@ -62,16 +62,16 @@ function renderTipsList(){
     listItem.innerHTML = "<li class='papel'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
     break;
   case "plastico":
-    listItem.innerHTML = "<li class='plastico'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    listItem.innerHTML = "<li class='plastico'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
     break;
   case "vidro":
-    listItem.innerHTML = "<li class='vidro'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    listItem.innerHTML = "<li class='vidro'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
     break;
   case "metal":
-    listItem.innerHTML = "<li class='metal'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    listItem.innerHTML = "<li class='metal'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
     break;
   case "organico":
-    listItem.innerHTML = "<li class='organico'> Material: " + tip.material + "/ Dica: "+ tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    listItem.innerHTML = "<li class='organico'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
     break;
 }
 
@@ -176,7 +176,23 @@ function renderFilteredTips(tips) {
   tips.forEach(function(tip) {
       var listItem = document.createElement("li");
       //listItem.innerHTML = "Material: " + tip.material + " / Dica: " + tip.dica;
-      listItem.innerHTML = "Material: " + tip.material + " / Dica: "+tip.dica+ '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">Excluir</button>';
+            switch (tip.material) {
+  case "papel":
+    listItem.innerHTML = "<li class='papel'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "plastico":
+    listItem.innerHTML = "<li class='plastico'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "vidro":
+    listItem.innerHTML = "<li class='vidro'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "metal":
+    listItem.innerHTML = "<li class='metal'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+  case "organico":
+    listItem.innerHTML = "<li class='organico'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
+    break;
+}
       filterTipsElement.appendChild(listItem);
   });
 }

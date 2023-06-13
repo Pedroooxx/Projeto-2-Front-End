@@ -161,7 +161,7 @@ body {
 }
 
 .formtxt {
-    margin: 0px 20px;
+    margin: 20px 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-color: #024906;
 }
@@ -204,9 +204,9 @@ body {
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
 	align-items: center;
 	align-content: center;
+    justify-content: center;
     color:white;
     background-color: white;
     text-decoration: none;
@@ -216,11 +216,26 @@ body {
 
 #tipsList li{
     text-align: center;
-    min-width:45%;
+    min-width:40%;
     margin:5px 10px;
     border-radius: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+#filterTips {
+    color:white;
+    text-decoration: none;
+    height:min-content;
+    width:100%;
+}
+
+#filterTips li{
+    text-align: center;
+    margin:20px 80px;
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 
 .papel {
     background-color: rgb(9, 81, 148);
@@ -243,11 +258,17 @@ li.organico {
 }
 
 .delete-button{
-    background-color: #c7c7c7;
-    border-radius: 50px;
+    background-color: #ffffff;
+    position: relative;
+    border-radius:17px;
     width:40px;
     height:40px;
     margin: 10px;
+}
+
+.delete-button:hover{
+    background-color: red;
+    border-color: white;
 }
 
 #filterBox{
