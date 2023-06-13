@@ -8,28 +8,10 @@
     var arrayValues = storedTips ? JSON.parse(storedTips) : [];
     /*código verifica o comprimento da matriz valuesArray usando operador ternário. 
     Se ela não estiver vazia, o ID do novo objeto será o ID do último objeto mais 1. 
-    Caso contrário, o ID será definido como 1. */
+    Caso contrário, o ID será definido como 1.*/
     var id = arrayValues.length > 0 ? arrayValues[arrayValues.length - 1].id + 1 : 1;
 
     var newTip = {id: id, material: material.value, dica: dica.value};
-
-    /*switch(material.value){
-      case "papel":
-        console.log("papel");
-        break;
-      case "metal":
-        console.log("metal");
-        break;
-      case "plastico":
-        console.log("plastico");
-        break;
-      case "vidro":
-        console.log("vidro");
-        break;
-      case "organico":
-        console.log("organico");
-        break;
-    }*/
 
     arrayValues.push(newTip);
     localStorage.setItem("storedTips", JSON.stringify(arrayValues));
@@ -55,7 +37,6 @@ function renderTipsList(){
     var arrayValues = JSON.parse(storedTips);
     arrayValues.forEach(function (tip) {
       var listItem = document.createElement('li');
-      //essa desgraça da linha de baixo deu tanto problema que eu não sei nem o que era e nem como resolvi
 
       switch (tip.material) {
   case "papel":
@@ -108,7 +89,6 @@ function renderTipsList(){
       var collectionTimesList = document.getElementById("collectionTimesList");
       collectionTimesList.innerHTML = "";
 
-      // Exemplo de horários de coleta por bairro
       var collectionTimes = [
         { bairro: "Primavera", horarios: ["Segunda-feira (07:00)", "Quarta-feira (07:00)", "Sexta-feira(07:00"] },
         { bairro: "Cristo Rei", horarios: ["Terça-feira (07:00)", "Quinta-feira (07:00)", "Sabado(07:00"] },
@@ -175,7 +155,6 @@ function renderFilteredTips(tips) {
 
   tips.forEach(function(tip) {
       var listItem = document.createElement("li");
-      //listItem.innerHTML = "Material: " + tip.material + " / Dica: " + tip.dica;
             switch (tip.material) {
   case "papel":
     listItem.innerHTML = "<li class='papel'>" + tip.dica + '<button class="delete-button" onclick="deleteTip(' + tip.id + ')">X</button> </li>';
@@ -198,3 +177,12 @@ function renderFilteredTips(tips) {
 }
 
 renderFilteredTips(JSON.parse(localStorage.getItem("storedTips")));
+
+document.getElementById('tipForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var material = document.getElementById("materialSelect");
+  var dica = document.getElementById("dicaInput");
+
+  dica.value = '';
+  material.value = '';
+});
