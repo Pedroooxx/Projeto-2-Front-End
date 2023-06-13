@@ -8,7 +8,7 @@
     var arrayValues = storedTips ? JSON.parse(storedTips) : [];
     /*código verifica o comprimento da matriz valuesArray usando operador ternário. 
     Se ela não estiver vazia, o ID do novo objeto será o ID do último objeto mais 1. 
-    Caso contrário, o ID será definido como 1. */
+    Caso contrário, o ID será definido como 1.*/
     var id = arrayValues.length > 0 ? arrayValues[arrayValues.length - 1].id + 1 : 1;
 
     var newTip = {id: id, material: material.value, dica: dica.value};
@@ -198,3 +198,12 @@ function renderFilteredTips(tips) {
 }
 
 renderFilteredTips(JSON.parse(localStorage.getItem("storedTips")));
+
+document.getElementById('tipForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var material = document.getElementById("materialSelect");
+  var dica = document.getElementById("dicaInput");
+
+  dica.value = '';
+  material.value = '';
+});
